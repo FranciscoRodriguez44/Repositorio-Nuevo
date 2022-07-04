@@ -14,9 +14,7 @@ class FrmProveedor extends React.Component {
             this.state ={
 
             }
-            //es para que reconzca el metodo de cargar articulos qe viene de articulos view 
-           
-             
+            //es para que reconzca el metodo y mande de cargar articulos qe viene de articulos view 
             this.CargarProveedores = this.props.route.params.CargarProveedores;
 
     }
@@ -49,7 +47,6 @@ class FrmProveedor extends React.Component {
             }
             }
                 />
-
             <Flatbutton text='Cancelar y Regresar' onPress={() =>
                 this.props.navigation.navigate("ProveedorView")} />
 

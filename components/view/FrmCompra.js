@@ -24,7 +24,6 @@ class FrmCompra extends React.Component {
             fecha: Date().toString(),
         }
         this.CargarCompra = this.props.route.params.CargarCompra;
-////
 
     }
 

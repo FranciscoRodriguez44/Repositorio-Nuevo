@@ -19,7 +19,7 @@ class FrmArticulo extends React.Component {
         
 
     }
-    //añadir un nuevoarticulo
+    //añadir un nuevoarticulo a la vista
      GuardarArticulo = async()=>{
         await this.articulo.Save("idarticulo");
         this.CargarArticulos();
