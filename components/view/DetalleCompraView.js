@@ -27,8 +27,8 @@ class DetalleCompraView extends React.Component {
 				{
 					this.state.Dataset.map(detalle => {
 						return (
-						<ScrollView style={styles.Container1}>
-						<CardDetalleCompra key={detalle.iddetallecompra}
+						<ScrollView style={styles.Container1} key={detalle.iddetallecompra}>
+						<CardDetalleCompra 
 							data={detalle} />
 						</ScrollView>)
 					})

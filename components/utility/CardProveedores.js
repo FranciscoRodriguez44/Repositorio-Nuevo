@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,Button } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 import { TouchableOpacity } from "react-native-web";
 
 
@@ -12,18 +12,23 @@ const CardProveedores = (props) => {
 			<Text style={styles.Atribute}>Telefono: {props.data.telefonoproveedor} </Text>
 			<Text style={styles.Atribute}>Direccion: {props.data.direccionproveedor} </Text>
 			
-			<TouchableOpacity onPress={() => {
-            props.SeleccionProveedor(props.data.idproveedor, props.data.nombreproveedor);
-            }}
+			<TouchableOpacity
+				title="Add"
+				color="#168aad"
+				onPress={() => {
+					props.selecct ? props.SeleccionProveedor(props.data.idproveedor, props.data.nombreproveedor) : false
+				}}
 
-            style = {styles.Button} >
-            <Text style = {styles.ButtonText}>Seleccionar</Text>
-       </TouchableOpacity>
+				style={styles.Button} >
+				{
+					props.selecct ? <Text style={styles.ButtonText}>ADD</Text> : <Text style={styles.ButtonText}>Ver Detalle</Text>
+				}
+			</TouchableOpacity>
 		</View>
 	);
 };
 
-export {CardProveedores };
+export { CardProveedores };
 
 const styles = StyleSheet.create({
 	CardStyle: {
@@ -41,18 +46,18 @@ const styles = StyleSheet.create({
 	Atribute: {
 		color: "#e9ecef",
 		fontSize: 20,
-	},    Button: {
-        marginTop: 10,
-        paddingTop: 10,
-        paddingBottom: 10,
-        backgroundColor: 'black',
-        borderRadius: 8,
-        borderWidth: 1,
-        borderColor: 'white'
-    },
-    ButtonText: {
-        color: 'white',
-        textAlign: 'center',
-        fontSize: 17
-      }
+	}, Button: {
+		marginTop: 10,
+		paddingTop: 10,
+		paddingBottom: 10,
+		backgroundColor: 'black',
+		borderRadius: 8,
+		borderWidth: 1,
+		borderColor: 'white'
+	},
+	ButtonText: {
+		color: 'white',
+		textAlign: 'center',
+		fontSize: 17
+	}
 });

@@ -14,6 +14,7 @@ class ProveedorView extends React.Component {
         this.state = {
             isloding: false,
             Dataset: [],
+            selecct: this.props.route.params ?? false
         };
         this.Proveedor = new TblProveedor();
         this.CargarProveedores();
@@ -59,7 +60,8 @@ class ProveedorView extends React.Component {
                     this.state.Dataset.map(
                         c => <CardProveedores key={c.idproveedor}
                             data={c} SeleccionProveedor={this.SeleccionProveedor}
-                            CargarProveedores={this.CargarProveedores} />
+                            selecct={this.state.selecct}
+                            />
                     )}
 
             </ScrollView>)

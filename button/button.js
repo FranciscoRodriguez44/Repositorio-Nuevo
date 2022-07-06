@@ -18,9 +18,11 @@ const styles =StyleSheet.create({
         paddingVertical: 10,
         borderRadius: 15,
         backgroundColor: "black",
-        top:20,
+        top:10,
         left:35,
         width:300,
+        marginBottom: 5
+
     },
     buttonText: {
         color: "white",

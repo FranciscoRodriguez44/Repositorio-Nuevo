@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyleSheet, Text, Button, View,Image, ActivityIndicator, TextInput, ScrollView,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, Button, View, Image, ActivityIndicator, TextInput, ScrollView, TouchableOpacity } from 'react-native';
 import { CardMercancia } from '../utility/FrmMercancia';
 
 import Flatbutton, { } from "../../button/button";
@@ -11,7 +11,7 @@ import { TblDetalleCompra } from '../../Model/TblDetalleCompra';
 class FrmDetalleCompra extends React.Component {
     constructor(props) {
         super();
-		this.props = props;
+        this.props = props;
         this.Detalle = new TblDetalleCompra();
         this.state = {
             Id: "",
@@ -22,7 +22,7 @@ class FrmDetalleCompra extends React.Component {
     }
 
     GuardarArticulo = async (key, Name) => {
-    
+
         this.setState({
             Id: key,
             articulo: Name
@@ -32,69 +32,68 @@ class FrmDetalleCompra extends React.Component {
     }
     render() {
         return (<ScrollView style={styles.container}>
-              <Image
-			style={{width:480,height:700,position:"absolute"}} 
-			source={require('../../components/img/libreria.jpg')}/>
+            <Image
+                style={{ width: 480, height: 700, position: "absolute" }}
+                source={require('../../components/img/libreriaMA2.jpg')} />
+            <View>
+                <Text style={ styles.Tittle}>REGISTRAR DETALLE</Text>
 
-               <View> 
-                   <Text style={{ color: "black", alignSelf: "center", fontSize: 25,fontWeight:'bold',}}>REGISTRAR DETALLE</Text>
-                   
-                   </View>
-        
-            <View style = { styles.Frm }>
-        
-                <View style = { styles.box_row }>
-                    <TextInput style = {styles.InputStyle}
+            </View>
+
+            <View style={styles.Frm}>
+
+                <View style={styles.box_row}>
+                    <TextInput style={styles.InputStyle}
                         placeholder='Articulo'
-                        value = { this.state.articulo }
+                        value={this.state.articulo}
                         disabled />
 
-                    <TextInput style = {styles.subitem_2}
-                        placeholder = 'ID'
-                        value = { this.state.Id }
+                    <TextInput style={styles.subitem_2}
+                        placeholder='ID'
+                        value={this.state.Id}
                         disabled />
 
-            <TouchableOpacity onPress= { async () => {
-                this.props.navigation.navigate("ArticulosView", {
-                    GuardarArticulo: this.GuardarArticulo ,
-                    selecct: true
-                });
-            }} style={styles.buttonAñadir}>
-                <Text style={styles.ButtonText}>Añadir</Text>
-                 </TouchableOpacity>
+                    <TouchableOpacity onPress={async () => {
+                        this.props.navigation.navigate("ArticulosView", {
+                            GuardarArticulo: this.GuardarArticulo,
+                            selecct: true
+                        });
+                    }} style={styles.buttonAñadir}>
+                        <Text style={styles.ButtonText}>Añadir</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
-            
+
             <View>
-            <TextInput style={styles.InputStyle}
-                placeholder="Precio Compra"
-                multiline
-                onChangeText={(val) => this.Detalle.preciocompra = val}>
+                <TextInput style={styles.InputStyle}
+                    placeholder="Precio Compra"
+                    multiline
+                    onChangeText={(val) => this.Detalle.preciocompra = val}>
                 </TextInput>
-            <TextInput style={styles.InputStyle}
-                placeholder="Cantidad Compra"
-                multiline
-                onChangeText={(val) => this.Detalle.cantidadcompra = val}>
-            </TextInput>
-            <TextInput style={styles.InputStyle}
-                placeholder="Descuento"
-                multiline
-                onChangeText={(val) => this.Detalle.descuentocompra = val}>
-            </TextInput>
+                <TextInput style={styles.InputStyle}
+                    placeholder="Cantidad Compra"
+                    multiline
+                    onChangeText={(val) => this.Detalle.cantidadcompra = val}>
+                </TextInput>
+                <TextInput style={styles.InputStyle}
+                    placeholder="Descuento"
+                    multiline
+                    onChangeText={(val) => this.Detalle.descuentocompra = val}>
+                </TextInput>
 
 
-            {/* Gjuardar y regresar*/}
-            {/* <Button title='Guardar Compra' onPress={() => {
+                {/* Gjuardar y regresar*/}
+                {/* <Button title='Guardar Compra' onPress={() => {
             }}></Button> */}
 
 
-            <Flatbutton2 text='AÑADIR DATOS ' onPress={async () => {
-                 this.GuardarDetalleCompra(this.Detalle, this.state.Id, this.flag); 
-            }} />
-            <Flatbutton text='Cancelar y Regresar' onPress={() =>
-                this.props.navigation.navigate("FrmCompra")} />
+                <Flatbutton2 text='AÑADIR DATOS ' onPress={async () => {
+                    this.GuardarDetalleCompra(this.Detalle, this.state.Id, this.flag);
+                }} />
+                <Flatbutton text='Cancelar y Regresar' onPress={() =>
+                    this.props.navigation.navigate("FrmCompra")} />
             </View>
-            
+
 
         </ScrollView>)
     }
@@ -108,13 +107,15 @@ const styles = StyleSheet.create({
         marginTop: 4,
         flex: 1,
         padding: 4,
-        margin: 2,  
+        margin: 2,
         borderWidth: 2,
         borderRadius: 5,
         backgroundColor: "white",
-    }, container: {
+    }, 
+    container: {
         backgroundColor: "#536878",
-    }, Frm: {
+    }, 
+    Frm: {
         display: 'flex',
         flexDirection: 'column',
         padding: 4,
@@ -122,7 +123,6 @@ const styles = StyleSheet.create({
         marginBottom: 4,
         marginLeft: 4,
         marginRight: 4,
-
         borderWidth: 2,
         borderRadius: 4,
         borderColor: "black"
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center'
-    },    
+    },
     subitem_2: {
         padding: 4,
         margin: 2,
@@ -145,15 +145,22 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'center',
         fontSize: 17
-    },buttonAñadir:{
-        color:"black",
+    }, 
+    buttonAñadir: {
+        color: "black",
         flex: 1,
         marginTop: 2,
         paddingTop: 4,
         paddingBottom: 6,
-        backgroundColor: '#55FF75',
+        backgroundColor: '#2F6155',
         borderRadius: 4,
         borderWidth: 1,
         borderColor: 'white'
+    },
+    Tittle: {
+        color: "white",
+        alignSelf: "center",
+        fontSize: 25, 
+        fontWeight: 'bold',
     }
 });

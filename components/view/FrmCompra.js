@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { StyleSheet, Text, Button, View, TouchableOpacity,Image, TextInput, ScrollView } from 'react-native';
+import { StyleSheet, Text, Button, View, TouchableOpacity, Image, TextInput, ScrollView } from 'react-native';
 
 import Flatbutton, { } from "../../button/button";
 
@@ -27,60 +27,12 @@ class FrmCompra extends React.Component {
 
     }
 
-    // GuardarDetalleCompra = async (Detalle = (new TblDetalleCompra), key) => {
-
-    //     if (this.state.detallecompra.length > 0) {
-
-    //         const detallecompras = this.state.detallecompra.map(p => {
-    //             if (p.idarticulo === key) {
-    //                 this.keys = p.idarticulo;
 
 
-    //                 return p;
-    //             }
-    //             return p;
-    //         });
-
-    //         console.log(this.keys + " == " + key);
-
-    //         if (this.keys == key) {
-
-
-    //             this.setState({
-    //                 detallecompra: detallecompras,
-    //                 Total: this.OpA,
-    //                 IVA: this.OpB
-    //             });
-
-    //         } else {
-
-    //             this.state.detallecompra.push(Detalle);
-
-    //             this.setState({
-    //                 detallecompra: this.state.detallecompra,
-
-    //             });
-
-    //         }
-
-    //     } else {
-
-    //         this.state.detallecompra.push(Detalle);
-
-    //         this.setState({
-    //             detallecompra: this.state.detallecompra,
-
-    //         });
-    //     }
-
-
-    //     this.props.navigation.navigate("FrmCompra");
-    // }
-
-    GuardarDetalleCompra =async(Detalle=(new TblDetalleCompra()))=>{
+    GuardarDetalleCompra = async (Detalle = (new TblDetalleCompra())) => {
         this.state.detallecompra.push(Detalle);
         this.setState({
-            detallecompra:this.state.detallecompra
+            detallecompra: this.state.detallecompra
         })
         this.props.navigation.navigate("FrmCompra");
     }
@@ -92,20 +44,20 @@ class FrmCompra extends React.Component {
 
         this.compra.idproveedor = key;
     }
-    Save =async()=> {
-        this.compra.fecha=this.state.fecha;
+    Save = async () => {
+        this.compra.fecha = this.state.fecha;
 
         await this.compra.Save("idcompra")
-        for(const key in this.state.detallecompra){
+        for (const key in this.state.detallecompra) {
             const detallecompra = this.state.detallecompra[key];
             detallecompra.idcompra = this.compra.idcompra;
             await detallecompra.Save("iddetallecompra")
         }
     }
 
-    EliminarDetalleCompra =async(item) =>{
+    EliminarDetalleCompra = async (item) => {
         const delete_item = this.state.detallecompra.filter(i => i.idarticulo !== item.idarticulo);
- 
+
         this.setState({
             detallecompra: delete_item,
         });
@@ -114,13 +66,17 @@ class FrmCompra extends React.Component {
 
     render() {
         return (<ScrollView style={styles.container}>
-                <Image
-			style={{width:480,height:700,position:"absolute"}} 
-			source={require('../../components/img/libreria.jpg')}/>
-            <View> <Text style={{ color: "black", alignSelf: "center", fontSize: 25,fontWeight:'bold', }}>REGISTRAR COMPRAS</Text></View>
-           
+            <Image
+                style={{ width: 480, height: 700, position: "absolute" }}
+                source={require('../../components/img/libreriaMA2.jpg')} />
+            <View>
+                <Text style={styles.Tittle}>
+                    REGISTRAR COMPRAS
+                </Text>
+            </View>
+
             <View style={styles.FrmProveedor}>
-                <Text style={{ color: "white", alignSelf: "center", fontSize: 20,fontWeight:'bold' }}>Datos Proveedor</Text>
+                <Text style={{ color: "white", alignSelf: "center", fontSize: 20, fontWeight: 'bold' }}>Datos Proveedor</Text>
                 <View style={styles.box_row}>
                     <TextInput style={styles.InputStyle}
                         placeholder='Proveedor'
@@ -132,15 +88,16 @@ class FrmCompra extends React.Component {
                         value={this.state.ID}
                         disabled />
 
-                    <TouchableOpacity  onPress={async () => {
+                    <TouchableOpacity onPress={async () => {
                         this.props.navigation.navigate("ProveedorView", {
                             SeleccionProveedor: this.SeleccionProveedor,
+                            selecct: true
                         });
-                    }}style={styles.buttonAñadir} >
+                    }} style={styles.buttonAñadir} >
                         <Text style={styles.ButtonText} >Añadir</Text>
-                        
-                        
-                         </TouchableOpacity>
+
+
+                    </TouchableOpacity>
                 </View>
                 <TextInput style={styles.InputStyle}
                     placeholder='Fecha de Compra'
@@ -149,7 +106,7 @@ class FrmCompra extends React.Component {
 
 
             <ScrollView style={styles.FrmProveedor}>
-                <Text style={{ color: "white", alignSelf: "center", fontSize: 20,fontWeight:'bold' }}>
+                <Text style={{ color: "white", alignSelf: "center", fontSize: 20, fontWeight: 'bold' }}>
                     Detalle de compra</Text>
                 <TouchableOpacity onPress={async () => {
                     this.props.navigation.navigate("FrmDetalleCompra", {
@@ -163,16 +120,16 @@ class FrmCompra extends React.Component {
                 {
                     this.state.detallecompra.map(
                         c => <CardDetalleCompraView key={c.idarticulo} data={c}
-                        EliminarDetalleCompra = {this.EliminarDetalleCompra} 
+                            EliminarDetalleCompra={this.EliminarDetalleCompra}
                         />
-                        
+
                     )
                 }
 
             </ScrollView>
 
             <View style={styles.FrmProveedor}>
-                <Text style={{ color: "white", alignSelf: "center", fontSize: 20,fontWeight:'bold' }}>Datos de Compra</Text>
+                <Text style={{ color: "white", alignSelf: "center", fontSize: 20, fontWeight: 'bold' }}>Datos de Compra</Text>
                 <TextInput style={styles.InputStyle}
                     placeholder="IdUsuario"
                     multiline
@@ -212,7 +169,7 @@ class FrmCompra extends React.Component {
 
 
             <Flatbutton text='Cancelar y Regresar' onPress={() =>
-                this.props.navigation.navigate("Home")} />
+                this.props.navigation.navigate("CompraView")} />
 
         </ScrollView>)
     }
@@ -240,7 +197,6 @@ const styles = StyleSheet.create({
         marginBottom: 4,
         marginLeft: 4,
         marginRight: 4,
-
         borderWidth: 2,
         borderRadius: 4,
         borderColor: "black"
@@ -263,21 +219,27 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         borderRadius: 15,
         backgroundColor: "black",
-        alignSelf:'center' ,
+        alignSelf: 'center',
         width: 300,
     }, ButtonText: {
         color: 'white',
         textAlign: 'center',
         fontSize: 17
-    },buttonAñadir:{
-        color:"black",
+    }, buttonAñadir: {
+        color: "black",
         flex: 1,
         marginTop: 2,
         paddingTop: 4,
         paddingBottom: 6,
-        backgroundColor: '#55FF75',
+        backgroundColor: '#2F6155',
         borderRadius: 4,
         borderWidth: 1,
         borderColor: 'white'
+    },
+    Tittle: {
+        color: "white",
+        alignSelf: "center",
+        fontSize: 25, 
+        fontWeight: 'bold',
     }
 });

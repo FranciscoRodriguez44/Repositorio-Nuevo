@@ -53,6 +53,7 @@ class ArticulosView extends React.Component {
 						CargarArticulos:this. CargarArticulos
 					})} />
 
+
 				<TextInput
 					style={styles.InputStyle}
 					placeholder="Buscar"

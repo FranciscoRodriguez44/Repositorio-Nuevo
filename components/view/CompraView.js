@@ -53,10 +53,10 @@ class CompraView extends React.Component {
 			// <View style={{ flex: 5 }}>
 			
 			<ScrollView style={styles.Container}>	
-			<Image
-			style={{width:480,height:700,position:"absolute"}} 
+			{/* <Image
+			style={{  width:480,height:700,position:"absolute"}} 
 			source={require('../../components/img/libreriaMA2.jpg')}
-			/>
+			/> */}
 				{/* <Text style={styles.Title}>Compras View</Text> */}
 				<Flatbutton  text='<- Regresar' onPress={() =>
                 this.props.navigation.navigate("Home")}/>
@@ -98,10 +98,10 @@ const styles = StyleSheet.create({
     },InputStyle: {
 		color: "white",
         backgroundColor:"white",
-        marginTop: 25,
 		padding:8,
         borderWidth: 2,
         borderRadius: 10,
+		marginTop: 10
 	}
     }
 );
