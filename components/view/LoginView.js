@@ -4,7 +4,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ActivityIndicator, TextInput, ScrollView, Button,Image } from "react-native";
 import Flatbutton5, {} from "../../button/buttonlogin";
 
-const DatosLogin ={usuario: 'GabrielGay', password:'selacome'} 
+const DatosLogin ={usuario: 'Admin', password:'Admin'} 
 
 class LoginView extends React.Component{
 constructor(props){
