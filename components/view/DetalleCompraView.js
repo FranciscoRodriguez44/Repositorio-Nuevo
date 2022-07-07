@@ -21,7 +21,7 @@ class DetalleCompraView extends React.Component {
 	render() {
 		return (
 			<ScrollView style={styles.Container}>
-				<Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 150 }}>Detalle de compras</Text>
+				<Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 'bold' }}>Detalle de compras</Text>
 				<Flatbutton style={styles.Button} text='<- Regresar' onPress={() =>
 					this.props.navigation.navigate("CompraView")} />
 				{

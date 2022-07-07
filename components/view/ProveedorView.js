@@ -37,7 +37,7 @@ class ProveedorView extends React.Component {
         return (
 
             <ScrollView style={styles.container}>
-                <Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 150 }}>Lista de proveedores</Text>
+                <Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 'bold'}}>Lista de proveedores</Text>
                 <Flatbutton text='+Ingresar NuevoProveedor' onPress={() =>
                     this.props.navigation.navigate("FrmProveedor", {
                         CargarProveedores: this.CargarProveedores

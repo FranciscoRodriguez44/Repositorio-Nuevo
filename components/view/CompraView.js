@@ -49,7 +49,7 @@ class CompraView extends React.Component {
 		return (
 
 			<ScrollView style={styles.Container}>
-				<Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 150 }}>Lista de compras realizadas</Text>
+				<Text style={{ color: "white", alignSelf: 'center', fontSize: 29, fontWeight: 'bold' }}>Lista de compras realizadas</Text>
 				{/* <Flatbutton  text='<- Regresar' onPress={() =>
                 this.props.navigation.navigate("Home")}/> */}
 				<Flatbutton text="+ Realizar Nueva Compra" onPress={() =>

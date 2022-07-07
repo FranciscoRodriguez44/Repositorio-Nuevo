@@ -39,7 +39,7 @@ class ArticulosView extends React.Component {
 		return (
 			// <View style={{ flex: 5 }}>
 			<ScrollView style={styles.Container}>
-				<Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 150 }}>Lista de articulos</Text>
+				<Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 'bold' }}>Lista de articulos</Text>
 				<Flatbutton text='+Ingresar Nuevo Articulo' onPress={() =>
 					this.props.navigation.navigate("FrmArticulo", {
 						CargarArticulos: this.CargarArticulos
