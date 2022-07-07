@@ -49,7 +49,7 @@ class FrmArticulo extends React.Component {
 
             <Flatbutton2 text='Guardar Articulo'onPress={async() =>{
                 await this.GuardarArticulo();
-            this.props.navigation.navigate("ArticulosView");
+            this.props.navigation.navigate("CompraView");
             }
             }
                 />

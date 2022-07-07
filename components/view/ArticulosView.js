@@ -34,23 +34,14 @@ class ArticulosView extends React.Component {
 	}
 
 	render() {
-		/**
-		 * parte del mapeo CardCursoComp
-		 * this.state.Dataset.map(curso => <CardCursosComp data ={curso} cargar ={this.CargarMatriculados}/>)
-		 */
+
 		return (
 			// <View style={{ flex: 5 }}>
 			<ScrollView style={styles.Container}>
-				<Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 150 }}>Articulos View</Text>
-				{/* <Button title="<- Regresar" onPress={()=>{
-				this.props.navigation.navigate("Home");
-				}}/> */}
-				<Flatbutton text='<- Regresar' onPress={() =>
-					this.props.navigation.navigate("Home")} />
-
+				<Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 150 }}>Lista de articulos</Text>
 				<Flatbutton text='Nuevo Articulo' onPress={() =>
-					this.props.navigation.navigate("FrmArticulo",{
-						CargarArticulos:this. CargarArticulos
+					this.props.navigation.navigate("FrmArticulo", {
+						CargarArticulos: this.CargarArticulos
 					})} />
 
 
@@ -64,7 +55,7 @@ class ArticulosView extends React.Component {
 				) : (
 					this.state.Dataset.map((articulo) => (
 						<CardArticulo key={articulo.idarticulo}
-							GuardarArticulo={this.GuardarArticulo} 
+							GuardarArticulo={this.GuardarArticulo}
 							selecct={this.state.selecct}
 							data={articulo}>
 						</CardArticulo>

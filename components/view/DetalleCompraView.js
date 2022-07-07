@@ -23,7 +23,7 @@ class DetalleCompraView extends React.Component {
 			<ScrollView style={styles.Container}>
 				<Text style={styles.Title}> Bloques Vista </Text>
 				<Flatbutton style = {styles.Button}  text='<- Regresar' onPress={() =>
-                this.props.navigation.navigate("BottomTab")}/>
+                this.props.navigation.navigate("CompraView")}/>
 				{
 					this.state.Dataset.map(detalle => {
 						return (

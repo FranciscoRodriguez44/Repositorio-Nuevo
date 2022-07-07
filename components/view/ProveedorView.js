@@ -38,18 +38,11 @@ class ProveedorView extends React.Component {
         return (
 
             <ScrollView style={styles.container}>
-                <Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 150 }}>Proveedor View</Text>
-                {/* <Button title="<- Regresar" onPress={()=>{
-				this.props.navigation.navigate("Home");
-				}}/> */}
+                <Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 150 }}>Lista de proveedores</Text>
                 <Flatbutton text='Nuevo Proveedor' onPress={() =>
-                    this.props.navigation.navigate("FrmProveedor",{
-                        CargarProveedores:this.CargarProveedores
+                    this.props.navigation.navigate("FrmProveedor", {
+                        CargarProveedores: this.CargarProveedores
                     })} />
-                <Flatbutton text='<- Regresar' onPress={() =>
-                    this.props.navigation.navigate("Home")} />
-
-
                 <TextInput
                     style={styles.InputStyle}
                     placeholder="Buscar"
@@ -61,7 +54,7 @@ class ProveedorView extends React.Component {
                         c => <CardProveedores key={c.idproveedor}
                             data={c} SeleccionProveedor={this.SeleccionProveedor}
                             selecct={this.state.selecct}
-                            />
+                        />
                     )}
 
             </ScrollView>)

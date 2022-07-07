@@ -53,7 +53,7 @@ render(){
 		 if(DatosLogin.usuario === this.state.usuario&& DatosLogin.password === this.state.password)
 		 //si coinciden usuario y contra
 		 {
-			this.props.navigation.navigate('Home')
+			this.props.navigation.navigate('BottomTab')
 			// alert('Logged in');
 		 }else{
 			 //si no coinciden los datos 

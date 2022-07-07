@@ -6,6 +6,8 @@ import { CompraView } from "./CompraView";
 
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { DetalleCompraView } from "./DetalleCompraView";
+import { ProveedorView } from "./ProveedorView";
+import MainView from "./MainView";
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +22,8 @@ const Tab = createBottomTabNavigator();
           tabBarActiveTintColor:"yellow",
 
         }}>
-        <Tab.Screen name="CompraView" component={CompraView} options={{
+        <Tab.Screen name="MainView" component={MainView} 
+        options={{
            tabBarBadge:0,
           tabBarIcon:()=>{
             return <AntDesign name="shoppingcart" size={25} color="white"/>
@@ -28,6 +31,14 @@ const Tab = createBottomTabNavigator();
          
         }/>      
           <Tab.Screen name="ArticulosView" component={ArticulosView} 
+          options={{
+            tabBarBadge:0,
+          tabBarIcon:()=>{
+            return <AntDesign name="edit" size={25} color="white"/>
+          }} 
+        
+        }/>
+           <Tab.Screen name="ProveedorView" component={ProveedorView} 
           options={{
             tabBarBadge:0,
           tabBarIcon:()=>{

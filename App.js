@@ -16,6 +16,7 @@ import { FrmDetalleCompra } from "./components/view/FrmDetalleCompra";
 import { DetalleCompraView } from "./components/view/DetalleCompraView";
 import { FrmArticulo } from "./components/view/FrmArticulo";
 import {FrmProveedor} from "./components/view/FrmProveedor";
+import MainView from "./components/view/MainView";
 
 
 export default function App() {
@@ -24,8 +25,8 @@ export default function App() {
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={{ headerShown: false }} >
 				<Stack.Screen name="LoginView" component={LoginView} />
-				<Stack.Screen name="Home" component={Home} />
 				<Stack.Screen name="BottomTab" component={BottomTab} />
+				{/* <Stack.Screen name="BottomTab" component={BottomTab} />
 				<Stack.Screen name="ArticulosView" component={ArticulosView} />
 				<Stack.Screen name="FrmCompra" component={FrmCompra} /> 
 				<Stack.Screen name="FrmDetalleCompra" component={FrmDetalleCompra} /> 
@@ -33,7 +34,7 @@ export default function App() {
 				<Stack.Screen name="ProveedorView" component={ProveedorView} />
 				<Stack.Screen name="CompraView" component={CompraView}/>
 				<Stack.Screen name="DetalleCompraView" component={DetalleCompraView}/>
-				<Stack.Screen name="FrmProveedor" component={FrmProveedor}/>
+				<Stack.Screen name="FrmProveedor" component={FrmProveedor}/> */}
 
 
 			</Stack.Navigator>
