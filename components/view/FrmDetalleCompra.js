@@ -16,7 +16,6 @@ class FrmDetalleCompra extends React.Component {
             articulo: ""
         }
         this.GuardarDetalleCompra = this.props.route.params.GuardarDetalleCompra;
-        this.flag = true;
     }
 
     GuardarArticulo = async (key, Name) => {
@@ -89,7 +88,7 @@ class FrmDetalleCompra extends React.Component {
 
             <View>
                 <Flatbutton2 text='AÑADIR DATOS ' onPress={async () => {
-                    this.GuardarDetalleCompra(this.Detalle, this.state.Id, this.flag);
+                    this.GuardarDetalleCompra(this.Detalle, this.state.Id);
 
                 }} />
                 <Flatbutton text='Cancelar y Regresar' onPress={() =>

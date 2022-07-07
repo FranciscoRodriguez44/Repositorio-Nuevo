@@ -36,6 +36,7 @@ class FrmCompra extends React.Component {
         })
         this.props.navigation.navigate("FrmCompra");
     }
+
     SeleccionProveedor = async (key, Name) => {
         this.setState({
             ID: key,
@@ -44,6 +45,7 @@ class FrmCompra extends React.Component {
 
         this.compra.idproveedor = key;
     }
+    
     Save = async () => {
         this.compra.fecha = this.state.fecha;
 
