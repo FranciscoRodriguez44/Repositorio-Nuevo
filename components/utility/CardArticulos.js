@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity, Text, View} from "react-native";
+import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 import Flatbutton2 from "../../button/button2";
 
 
@@ -8,24 +8,24 @@ const CardArticulo = (props) => {
 		<View style={styles.CardStyle}>
 			<Text style={styles.Title}>ARTICULOS</Text>
 			<Text style={styles.Atribute}>Nombre: {props.data.nombrearticulo} </Text>
-			<Text style={styles.Atribute}>Descripcion: {props.data.descripcionarticulo} </Text> 
+			<Text style={styles.Atribute}>Descripcion: {props.data.descripcionarticulo} </Text>
 			<Text style={styles.Atribute}>ID Categoria: {props.data.idcategoria} </Text>
-			<Text style={styles.Atribute}>ID Marca: {props.data.idmarca} </Text> 
+			<Text style={styles.Atribute}>ID Marca: {props.data.idmarca} </Text>
 
-			<TouchableOpacity 
+			<TouchableOpacity
 				title="Add"
 				color="#168aad"
 				onPress={() => {
 					props.selecct ? props.GuardarArticulo(props.data.idarticulo, props.data.nombrearticulo) : false
-				   }}
-	   
-				   style = {styles.button} >
-					   {
-						   props.selecct ? <Text style = {styles.ButtonText}>ADD</Text> : <Text style = {styles.ButtonText}>Ver Detalle</Text>
-					   }
+				}}
+
+				style={styles.Button} >
+				{
+					props.selecct ? <Text style={styles.ButtonText}>ADD</Text> : <Text style={styles.ButtonText}>Ver Detalle</Text>
+				}
 			</TouchableOpacity>
-		
-		
+
+
 
 		</View>
 	);
@@ -36,9 +36,8 @@ export { CardArticulo };
 const styles = StyleSheet.create({
 	CardStyle: {
 		backgroundColor: "#212529",
-		// height: "20%",
 		padding: 20,
-		margin: 15,
+		margin: 10,
 		borderRadius: 10
 	},
 	Title: {
@@ -47,23 +46,21 @@ const styles = StyleSheet.create({
 	},
 	Atribute: {
 		color: "#e9ecef",
-		fontSize: 16,
+		fontSize: 18,
 	},
-	Resumen: {
-		color: "#e9ecef",
-		fontSize: 12,
-	},button: {
-		alignItems: 'center',
-		justifyContent: 'center',
-		paddingVertical: 12,
-		paddingHorizontal: 32,
-		borderRadius: 4,
-		elevation: 3,
+	Button: {
+		marginTop: 10,
+		paddingTop: 10,
+		paddingBottom: 10,
 		backgroundColor: 'black',
-	  },ButtonText: {
-        color: 'white',
-        textAlign: 'center',
-        fontSize: 17
-      }
-	 
+		borderRadius: 8,
+		borderWidth: 1,
+		borderColor: 'white'
+	},
+	ButtonText: {
+		color: 'white',
+		textAlign: 'center',
+		fontSize: 17
+	}
+
 });

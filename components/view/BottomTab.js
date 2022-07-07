@@ -24,7 +24,6 @@ const Tab = createBottomTabNavigator();
         }}>
         <Tab.Screen name="MainView" component={MainView} 
         options={{
-           tabBarBadge:0,
           tabBarIcon:()=>{
             return <AntDesign name="shoppingcart" size={25} color="white"/>
           }} 
@@ -32,7 +31,6 @@ const Tab = createBottomTabNavigator();
         }/>      
           <Tab.Screen name="ArticulosView" component={ArticulosView} 
           options={{
-            tabBarBadge:0,
           tabBarIcon:()=>{
             return <AntDesign name="edit" size={25} color="white"/>
           }} 
@@ -40,7 +38,6 @@ const Tab = createBottomTabNavigator();
         }/>
            <Tab.Screen name="ProveedorView" component={ProveedorView} 
           options={{
-            tabBarBadge:0,
           tabBarIcon:()=>{
             return <AntDesign name="edit" size={25} color="white"/>
           }} 

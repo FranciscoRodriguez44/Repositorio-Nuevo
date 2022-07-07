@@ -39,7 +39,7 @@ class ProveedorView extends React.Component {
 
             <ScrollView style={styles.container}>
                 <Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 150 }}>Lista de proveedores</Text>
-                <Flatbutton text='Nuevo Proveedor' onPress={() =>
+                <Flatbutton text='+Ingresar Nuevo Proveedor' onPress={() =>
                     this.props.navigation.navigate("FrmProveedor", {
                         CargarProveedores: this.CargarProveedores
                     })} />
@@ -74,13 +74,12 @@ const styles = StyleSheet.create({
         backgroundColor: "#536878",
         color: "white"
     }, InputStyle: {
-        color: "white",
-        backgroundColor: "white",
-        marginTop: 25,
-        padding: 8,
-        borderWidth: 2,
-        borderRadius: 10,
-    }
-
+		color: "white",
+		backgroundColor: "white",
+		padding: 8,
+		borderWidth: 2,
+		borderRadius: 10,
+		marginTop: 10
+	}
 }
 );

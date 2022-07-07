@@ -11,7 +11,7 @@ const CardProveedores = (props) => {
 			<Text style={styles.Atribute}>Nombre: {props.data.nombreproveedor} </Text>
 			<Text style={styles.Atribute}>Telefono: {props.data.telefonoproveedor} </Text>
 			<Text style={styles.Atribute}>Direccion: {props.data.direccionproveedor} </Text>
-			
+
 			<TouchableOpacity
 				title="Add"
 				color="#168aad"
@@ -32,20 +32,18 @@ export { CardProveedores };
 
 const styles = StyleSheet.create({
 	CardStyle: {
-		flex: 4,
 		backgroundColor: "#212529",
-		// height: "20%",
 		padding: 20,
-		margin: 15,
-		borderRadius: 10,
+		margin: 10,
+		borderRadius: 10
 	},
 	Title: {
 		color: "#f8f9fa",
-		fontSize: 32,
+		fontSize: 25,
 	},
 	Atribute: {
 		color: "#e9ecef",
-		fontSize: 20,
+		fontSize: 18,
 	}, Button: {
 		marginTop: 10,
 		paddingTop: 10,
