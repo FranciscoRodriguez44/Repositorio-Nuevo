@@ -1,21 +1,20 @@
 import { Entity } from "./Core/Entity";
 
-class TblProveedor extends Entity{
+class TblProveedor extends Entity {
 
-    constructor(proveedor ={})
-    {
+    constructor(proveedor = {}) {
         super();
         for (const prop in proveedor) {
             this[prop] = proveedor[prop];
         }
     }
     ApiMethods = {
-        Get: "TblProveedor"  
-      }
-    idproveedor= "";
-    nombreproveedor="";
-    telefonoproveedor="";
-    direccionproveedor= "";
+        Get: "TblProveedor"
+    }
+    idproveedor = "";
+    nombreproveedor = "";
+    telefonoproveedor = "";
+    direccionproveedor = "";
 
     // Get= async(param) => {
     //     const Proveedor = await import("../APIDatabase/TblProveedor.json");
@@ -26,4 +25,4 @@ class TblProveedor extends Entity{
     // }
 
 }
-export {TblProveedor};
+export { TblProveedor };

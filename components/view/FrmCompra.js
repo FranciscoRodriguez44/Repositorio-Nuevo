@@ -66,9 +66,9 @@ class FrmCompra extends React.Component {
 
     render() {
         return (<ScrollView style={styles.container}>
-            <Image
+            {/* <Image
                 style={{ width: 480, height: 700, position: "absolute" }}
-                source={require('../../components/img/libreriaMA2.jpg')} />
+                source={require('../../components/img/libreriaMA2.jpg')} /> */}
             <View>
                 <Text style={styles.Tittle}>
                     REGISTRAR COMPRAS
@@ -130,41 +130,42 @@ class FrmCompra extends React.Component {
 
             <View style={styles.FrmProveedor}>
                 <Text style={{ color: "white", alignSelf: "center", fontSize: 20, fontWeight: 'bold' }}>Datos de Compra</Text>
-                <TextInput style={styles.InputStyle}
-                    placeholder="IdUsuario"
-                    multiline
-                    numberOfLines={1}
-                    onChangeText={val => this.compra.idusuario = val} ></TextInput>
-                <TextInput style={styles.InputStyle}
-                    placeholder="Sub Total"
-                    multiline
-                    numberOfLines={1}
-                    onChangeText={val => this.compra.subtotalcompra = val} ></TextInput>
-                <TextInput style={styles.InputStyle}
-                    placeholder="Iva"
-                    multiline
-                    numberOfLines={1}
-                    onChangeText={val => this.compra.iva = val} ></TextInput>
-                <TextInput style={styles.InputStyle}
-                    placeholder="Descuento"
-                    multiline
-                    numberOfLines={1}
-                    onChangeText={val => this.compra.descuentocompra = val} ></TextInput>
-                <TextInput style={styles.InputStyle}
-                    placeholder="Total Compra"
-                    multiline
-                    numberOfLines={1}
-                    onChangeText={val => this.compra.totalcompra = val} ></TextInput>
-
+                <View style={styles.box_row}>
+                    <TextInput style={styles.InputStyle}
+                        placeholder="IdUsuario"
+                        multiline
+                        numberOfLines={1}
+                        onChangeText={val => this.compra.idusuario = val} ></TextInput>
+                    <TextInput style={styles.InputStyle}
+                        placeholder="Sub Total"
+                        multiline
+                        numberOfLines={1}
+                        onChangeText={val => this.compra.subtotalcompra = val} ></TextInput>
+                    <TextInput style={styles.InputStyle}
+                        placeholder="Iva"
+                        multiline
+                        numberOfLines={1}
+                        onChangeText={val => this.compra.iva = val} ></TextInput>
+                </View>
+                <View style={styles.box_row}>
+                    <TextInput style={styles.InputStyle}
+                        placeholder="Descuento"
+                        multiline
+                        numberOfLines={1}
+                        onChangeText={val => this.compra.descuentocompra = val} ></TextInput>
+                    <TextInput style={styles.InputStyle}
+                        placeholder="Total Compra"
+                        multiline
+                        numberOfLines={1}
+                        onChangeText={val => this.compra.totalcompra = val} ></TextInput>
+                </View>
             </View>
-
-
-
-
 
             <Flatbutton2 text='Finalizar Compra' onPress={async () => {
                 await this.Save();
-                this.props.navigation.navigate("CompraView");
+                this.props.navigation.navigate("CompraView", {
+                    CargarCompra: this.CargarCompra()
+                });
             }} ></Flatbutton2>
 
 
@@ -239,7 +240,7 @@ const styles = StyleSheet.create({
     Tittle: {
         color: "white",
         alignSelf: "center",
-        fontSize: 25, 
+        fontSize: 25,
         fontWeight: 'bold',
     }
 });

@@ -9,17 +9,17 @@ import { TblProveedor } from '../../Model/TblProveedor';
 class FrmProveedor extends React.Component {
     constructor(props) {
         super()
-            this.props=props;
-            this.proveedor= new TblProveedor();
-            this.state ={
+        this.props = props;
+        this.proveedor = new TblProveedor();
+        this.state = {
 
-            }
-            //es para que reconzca el metodo y mande de cargar articulos qe viene de articulos view 
-            this.CargarProveedores = this.props.route.params.CargarProveedores;
+        }
+        //es para que reconzca el metodo y mande de cargar articulos qe viene de articulos view 
+        this.CargarProveedores = this.props.route.params.CargarProveedores;
 
     }
     //añadir un nuevo proveedor a la vista
-     GuardarProveedor = async()=>{
+    GuardarProveedor = async () => {
         await this.proveedor.Save("idproveedor");
         this.CargarProveedores();
     }
@@ -28,25 +28,25 @@ class FrmProveedor extends React.Component {
             <Text style={{ color: "white", alignSelf: "center", fontSize: 25 }}>REGISTRAR ARTICULO COMPRADO</Text>
             <TextInput style={styles.InputStyle}
                 placeholder="Nombre Proveedor"
-                onChangeText={(val)=>this.proveedor.nombreproveedor=val} ></TextInput>
+                onChangeText={(val) => this.proveedor.nombreproveedor = val} ></TextInput>
             <TextInput style={styles.InputStyle}
                 placeholder="Telefono"
                 multiline
                 numberOfLines={1}
-                onChangeText={(val)=>this.proveedor.telefonoproveedor=val}  ></TextInput>
+                onChangeText={(val) => this.proveedor.telefonoproveedor = val}  ></TextInput>
             <TextInput style={styles.InputStyle}
                 placeholder="Direccion"
                 multiline
                 numberOfLines={1}
-                onChangeText={(val)=>this.proveedor.direccionproveedor=val}  ></TextInput>
-            
+                onChangeText={(val) => this.proveedor.direccionproveedor = val}  ></TextInput>
 
-            <Flatbutton2 text='Guardar Proveedor'onPress={async() =>{
+
+            <Flatbutton2 text='Guardar Proveedor' onPress={async () => {
                 await this.GuardarProveedor();
-            this.props.navigation.navigate("ProveedorView");
+                this.props.navigation.navigate("ProveedorView");
             }
             }
-                />
+            />
             <Flatbutton text='Cancelar y Regresar' onPress={() =>
                 this.props.navigation.navigate("ProveedorView")} />
 

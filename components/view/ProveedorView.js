@@ -1,4 +1,3 @@
-import { Card } from 'antd';
 import React from 'react';
 
 import { StyleSheet, Text, TextInput, View, ActivityIndicator, ScrollView, Button } from 'react-native';
@@ -39,7 +38,7 @@ class ProveedorView extends React.Component {
 
             <ScrollView style={styles.container}>
                 <Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 150 }}>Lista de proveedores</Text>
-                <Flatbutton text='+Ingresar Nuevo Proveedor' onPress={() =>
+                <Flatbutton text='+Ingresar NuevoProveedor' onPress={() =>
                     this.props.navigation.navigate("FrmProveedor", {
                         CargarProveedores: this.CargarProveedores
                     })} />
@@ -74,12 +73,12 @@ const styles = StyleSheet.create({
         backgroundColor: "#536878",
         color: "white"
     }, InputStyle: {
-		color: "white",
-		backgroundColor: "white",
-		padding: 8,
-		borderWidth: 2,
-		borderRadius: 10,
-		marginTop: 10
-	}
+        color: "white",
+        backgroundColor: "white",
+        padding: 8,
+        borderWidth: 2,
+        borderRadius: 10,
+        marginTop: 10
+    }
 }
 );

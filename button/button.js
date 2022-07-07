@@ -20,6 +20,7 @@ const styles =StyleSheet.create({
         backgroundColor: "black",
         left:35,
         width:300,
+        marginTop:13,
     },
     buttonText: {
         color: "white",

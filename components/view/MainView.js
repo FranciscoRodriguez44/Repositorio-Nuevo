@@ -16,6 +16,7 @@ import { ArticulosView } from "./ArticulosView";
 export default function MainView() {
 	return (
 		<Stack.Navigator screenOptions={{ headerShown: false }}>
+			
 			<Stack.Screen name="CompraView" component={CompraView} />
 			<Stack.Screen name="DetalleCompraView" component={DetalleCompraView} />
 			<Stack.Screen name="ArticulosView" component={ArticulosView} />
@@ -25,9 +26,8 @@ export default function MainView() {
 			<Stack.Screen name="FrmCompra" component={FrmCompra} />
 			<Stack.Screen name="FrmDetalleCompra" component={FrmDetalleCompra} />
 
-
-		
 		</Stack.Navigator>
+
 	);
 }
 

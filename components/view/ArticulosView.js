@@ -12,7 +12,7 @@ class ArticulosView extends React.Component {
 		super();
 		this.props = props
 		this.state = {
-			isLoading: true,
+			isLoading: false,
 			Dataset: [],
 			selecct: this.props.route.params ?? false
 		};
@@ -23,10 +23,11 @@ class ArticulosView extends React.Component {
 	CargarArticulos = async (param = "") => {
 		const Articulos = await this.Articulos.Get(param);
 		this.setState({
-			isLoading: false,
+			isloading: true,
 			Dataset: Articulos,
 		});
 	};
+
 
 	GuardarArticulo = async (key, Name) => {
 		this.props.route.params.GuardarArticulo(key, Name);
@@ -50,17 +51,16 @@ class ArticulosView extends React.Component {
 					placeholder="Buscar"
 					onChangeText={(val) => this.CargarArticulos(val)}
 				></TextInput>
-				{this.state.isLoading ? (
+				{this.state.isLoading ?
 					<ActivityIndicator />
-				) : (
-					this.state.Dataset.map((articulo) => (
-						<CardArticulo key={articulo.idarticulo}
-							GuardarArticulo={this.GuardarArticulo}
+					:
+					this.state.Dataset.map(
+						c => <CardArticulo key={c.idarticulo}
+							data={c} GuardarArticulo={this.GuardarArticulo}
 							selecct={this.state.selecct}
-							data={articulo}>
-						</CardArticulo>
-					))
-				)}
+						/>
+					)}
+
 
 			</ScrollView>
 		);

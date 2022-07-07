@@ -52,11 +52,11 @@ class CompraView extends React.Component {
 				<Text style={{ color: "white", alignSelf: 'center', fontSize: 30, fontWeight: 150 }}>Lista de compras realizadas</Text>
 				{/* <Flatbutton  text='<- Regresar' onPress={() =>
                 this.props.navigation.navigate("Home")}/> */}
-				<Flatbutton text="+ Realizar Nueva Compra" onPress={() => {
+				<Flatbutton text="+ Realizar Nueva Compra" onPress={() =>
 					this.props.navigation.navigate("FrmCompra", {
-						CargarCompra: this.CargarCompra
-					});
-				}} />
+						CargarCompra: this.CargarCompra,
+					})
+				} />
 				<TextInput
 					style={styles.InputStyle}
 					placeholder="Buscar"

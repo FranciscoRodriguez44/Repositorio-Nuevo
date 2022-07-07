@@ -1,32 +1,32 @@
 import { Entity } from "./Core/Entity";
 
-class TblArticulos extends Entity   {
-	constructor(articulo = {}){
+class TblArticulos extends Entity {
+	constructor(articulo = {}) {
 		super();
 		for (const prop in articulo) {
 			this[prop] = articulo[prop];
 		}
 	}
 	ApiMethods = {
-        Get: "TblArticulos"  
-      }
+		Get: "TblArticulos"
+	}
 	idarticulo = "";
 	nombrearticulo = "";
 	descripcionarticulo = "";
 	idcategoria = "";
 	idmarca = "";
 
-	TblArticulos ={
+	TblArticulos = {
 		val: [],
-	 	get: async()=> {
+		get: async () => {
 			if (this.idarticulo != "") {
 				const CargarArticuloVenta = new TblArticulos();
-				return await CargarArticuloVenta.GetByProps("idarticulo", this.idarticulo); 
-			} else{
+				return await CargarArticuloVenta.GetByProps("idarticulo", this.idarticulo);
+			} else {
 				return this.TblArticulos.val
 			}
 		},
-		set:(newValue)=> {
+		set: (newValue) => {
 			this.val = newValue;
 		}
 	}

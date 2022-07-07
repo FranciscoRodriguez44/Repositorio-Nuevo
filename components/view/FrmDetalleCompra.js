@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { StyleSheet, Text, Button, View, Image, ActivityIndicator, TextInput, ScrollView, TouchableOpacity } from 'react-native';
-import { CardMercancia } from '../utility/FrmMercancia';
-
 import Flatbutton, { } from "../../button/button";
 
 import Flatbutton2, { } from "../../button/button2";
@@ -32,11 +30,11 @@ class FrmDetalleCompra extends React.Component {
     }
     render() {
         return (<ScrollView style={styles.container}>
-            <Image
+            {/* <Image
                 style={{ width: 480, height: 700, position: "absolute" }}
-                source={require('../../components/img/libreriaMA2.jpg')} />
+                source={require('../../components/img/libreriaMA2.jpg')} /> */}
             <View>
-                <Text style={ styles.Tittle}>REGISTRAR DETALLE</Text>
+                <Text style={styles.Tittle}>REGISTRAR DETALLE</Text>
 
             </View>
 
@@ -64,31 +62,35 @@ class FrmDetalleCompra extends React.Component {
                 </View>
             </View>
 
-            <View>
-                <TextInput style={styles.InputStyle}
-                    placeholder="Precio Compra"
-                    multiline
-                    onChangeText={(val) => this.Detalle.preciocompra = val}>
-                </TextInput>
-                <TextInput style={styles.InputStyle}
-                    placeholder="Cantidad Compra"
-                    multiline
-                    onChangeText={(val) => this.Detalle.cantidadcompra = val}>
-                </TextInput>
-                <TextInput style={styles.InputStyle}
-                    placeholder="Descuento"
-                    multiline
-                    onChangeText={(val) => this.Detalle.descuentocompra = val}>
-                </TextInput>
+            <View style={styles.Frm}>
+                <Text style={{ color: "white", alignSelf: "center", fontSize: 20, fontWeight: 'bold' }}>Datos de Compra</Text>
+                <View style={styles.box_row}>
+                    <TextInput style={styles.InputStyle}
+                        placeholder="Precio Compra"
+                        multiline
+                        onChangeText={(val) => this.Detalle.preciocompra = val}>
+                    </TextInput>
+                    <TextInput style={styles.InputStyle}
+                        placeholder="Cantidad Compra"
+                        multiline
+                        onChangeText={(val) => this.Detalle.cantidadcompra = val}>
+                    </TextInput>
+                    <TextInput style={styles.InputStyle}
+                        placeholder="Descuento"
+                        multiline
+                        onChangeText={(val) => this.Detalle.descuentocompra = val}>
+                    </TextInput>
+                </View>
+            </View>
 
-
-                {/* Gjuardar y regresar*/}
-                {/* <Button title='Guardar Compra' onPress={() => {
+            {/* Gjuardar y regresar*/}
+            {/* <Button title='Guardar Compra' onPress={() => {
             }}></Button> */}
 
-
+            <View>
                 <Flatbutton2 text='AÑADIR DATOS ' onPress={async () => {
                     this.GuardarDetalleCompra(this.Detalle, this.state.Id, this.flag);
+
                 }} />
                 <Flatbutton text='Cancelar y Regresar' onPress={() =>
                     this.props.navigation.navigate("FrmCompra")} />
@@ -111,15 +113,15 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 5,
         backgroundColor: "white",
-    }, 
+    },
     container: {
         backgroundColor: "#536878",
-    }, 
+    },
     Frm: {
         display: 'flex',
         flexDirection: 'column',
         padding: 4,
-        marginTop: 4,
+        marginTop: 10,
         marginBottom: 4,
         marginLeft: 4,
         marginRight: 4,
@@ -145,7 +147,7 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'center',
         fontSize: 17
-    }, 
+    },
     buttonAñadir: {
         color: "black",
         flex: 1,
@@ -160,7 +162,7 @@ const styles = StyleSheet.create({
     Tittle: {
         color: "white",
         alignSelf: "center",
-        fontSize: 25, 
+        fontSize: 25,
         fontWeight: 'bold',
     }
 });

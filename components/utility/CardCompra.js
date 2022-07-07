@@ -1,4 +1,4 @@
-import { StyleSheet, Button, Text, View} from "react-native";
+import { StyleSheet, Button, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-web";
 
 
@@ -8,10 +8,10 @@ const CardCompra = (props) => {
 		<View style={styles.CardStyle}>
 			<Text style={styles.Title}>Compras</Text>
 			<Text style={styles.Atribute}>Fecha compra: {props.data.fechacompra} </Text>
-            <Text style={styles.Atribute}>Id Usuario: {props.data.idusuario} </Text>
-            <Text style={styles.Atribute}>Id Proveedor: {props.data.idproveedor} </Text>
-			<Text style={styles.Atribute}>Total compra: {props.data.totalcompra} </Text> 
-			<TouchableOpacity 
+			<Text style={styles.Atribute}>Id Usuario: {props.data.idusuario} </Text>
+			<Text style={styles.Atribute}>Id Proveedor: {props.data.idproveedor} </Text>
+			<Text style={styles.Atribute}>Total compra: {props.data.totalcompra} </Text>
+			<TouchableOpacity
 				color="#168aad"
 				onPress={() => {
 					props.CargarDetalle(props.data);
@@ -19,8 +19,8 @@ const CardCompra = (props) => {
 			>
 				<Text style={styles.ButtonText}>Detalle de compra</Text>
 			</TouchableOpacity>
-		
-		
+
+
 
 		</View>
 	);
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 	Resumen: {
 		color: "#e9ecef",
 		fontSize: 12,
-	},	Button: {
+	}, Button: {
 		marginTop: 10,
 		paddingTop: 10,
 		paddingBottom: 10,
@@ -60,5 +60,5 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		fontSize: 17
 	}
-	 
+
 });

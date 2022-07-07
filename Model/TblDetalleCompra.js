@@ -1,39 +1,38 @@
 import { Entity } from "./Core/Entity";
 import { TblArticulos } from "./TblArticulos";
 
-class TblDetalleCompra extends Entity{
+class TblDetalleCompra extends Entity {
 
-    constructor(detallecompra ={})
-    {
+    constructor(detallecompra = {}) {
         super();
         for (const prop in detallecompra) {
             this[prop] = detallecompra[prop];
         }
     }
     ApiMethods = {
-        Get: "TblDetalleCompra"  
-      }
-      iddetallecompra= "";
-      idcompra="";
-      idarticulo="";
-      preciocompra= "";
-      cantidadcompra= "";
-      descuentocompra= "";
+        Get: "TblDetalleCompra"
+    }
+    iddetallecompra = "";
+    idcompra = "";
+    idarticulo = "";
+    preciocompra = "";
+    cantidadcompra = "";
+    descuentocompra = "";
 
-      TblArticulos = {
+    TblArticulos = {
         val: [],
-        get: async ()=> {
+        get: async () => {
             if (this.idarticulo != "") {
                 const articulo = new TblArticulos();
 
                 return await articulo.GetByProps("idarticulo", this.idarticulo);
-            }else{
+            } else {
                 return this.TblArticulos.val;
-            }            
+            }
         }, set(newValue) {
             this.TblDetalleCompra.val = newValue;
         }
     }
 
 }
-export {TblDetalleCompra};
+export { TblDetalleCompra };
